@@ -1,4 +1,3 @@
-
 const splash = document.getElementById(".splash");
 document.addEventListener('click',()=>{
     setTimeout(()=>{
@@ -6,12 +5,9 @@ document.addEventListener('click',()=>{
     },4000)
 })
 
-
 function playSound(){
     document.getElementById("player").play();
 }
-
-
 
 function hide(){
     document.getElementById("startButton").style.display = "none";
