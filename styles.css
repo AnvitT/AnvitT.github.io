@@ -1,3 +1,40 @@
 body{
     background-color: brown;
 }
+
+.splash{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(1, 20, 2);
+    z-index: 10;
+    text-align: center;
+    line-height: 90vh;
+}
+
+.ball{
+    width: 10%;
+    height: 20vh;
+    border-radius: 50%;
+    background-color: antiquewhite;
+    animation: bounce cubic-bezier(0.5, 0.05, 1, 0.5),grow;
+    animation-duration: 0.5s,1.5s;
+    animation-delay: 0s,3s;
+    animation-direction:alternate;
+    animation-iteration-count:6,infinite;
+    animation-play-state: paused,paused;
+}
+
+
+@keyframes grow{
+    from{border-radius: 50%;filter: blur(0px);opacity: 1;transform: scale(1);}
+    to{border-radius: 0%;filter: blur(30px);opacity: 0;transform: scale(4);}
+}
+
+
+@keyframes bounce{
+    from{transform: translate3d(0,0,0);}
+    to{transform: translate3d(0,200px,0);}
+}
