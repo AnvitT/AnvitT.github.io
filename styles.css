@@ -16,7 +16,7 @@ body{
 
 .ball{
     position: absolute;
-    top: 50%;
+    top: 20%;
     left: 50%;
     width: 10%;
     height: 20vh;
