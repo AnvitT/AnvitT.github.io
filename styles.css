@@ -24,7 +24,6 @@ body{
     animation-delay: 0s,3s;
     animation-direction:alternate;
     animation-iteration-count:6,infinite;
-    animation-play-state: paused,paused;
 }
 
 
