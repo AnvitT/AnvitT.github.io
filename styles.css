@@ -75,3 +75,81 @@ h1{
 }
 
 
+.wrapper.one {
+    border-radius: 80%;
+    background-color: #36454f
+}
+.drop-main {
+    display: flex;
+    font-size: 7rem;
+    margin: 1.5rem;
+    justify-content: center;
+    font-family: "Russo One", sans-serif;
+}
+.H {
+    opacity: 0;
+    animation: drop 0.4s linear forwards;
+    color: #00ffff;
+}
+.A {
+    opacity: 0;
+    animation: drop 0.4s linear forwards 4.7s;
+    color: #99ffff;
+}
+.P {
+    opacity: 0;
+    animation: drop 0.4s linear forwards 4.9s;
+    color: #ccffff;
+}
+.P {
+    opacity: 0;
+    animation: drop 0.4s linear forwards 5.1s;
+    color: #ffffff;
+}
+.Y {
+    opacity: 0;
+    animation: drop 0.4s linear forwards 5.3s;
+    color: #de4040;
+}
+.Bi {
+    opacity: 0;
+    animation: drop 0.4s linear forwards 5.5s;
+    color: #0d46f1;
+}
+.rt {
+    opacity: 0;
+    animation: drop 0.4s linear forwards 5.7s;
+    color: #ce0920;
+}
+.hd {
+    opacity: 0;
+    animation: drop 0.4s linear forwards 5.9s;
+    color: #07cb07;
+}
+.ay {
+    opacity: 0;
+    animation: drop 0.4s linear forwards 6.1s;
+    color: #9f06e6;
+}
+@keyframes drop {
+    0% {
+        transform: translateY(-200px);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    65% {
+        transform: translateY(-17px);
+        opacity: 1;
+    }
+    75% {
+        transform: translateY(-22px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
