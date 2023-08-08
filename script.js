@@ -15,5 +15,3 @@ function hide(){
     var audio = new Audio('FinalIntro.mp3');
     audio.play();
 }
-
-
