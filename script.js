@@ -40,19 +40,6 @@ document.addEventListener('scroll', function() {
     }
 });
 
-    // const bannerTexts = document.querySelectorAll('.banner-text');
-    // bannerTexts.forEach(bannerText => {
-    //     const rect = bannerText.getBoundingClientRect();
-    //     const isVisible = (rect.top >= 0) && (rect.bottom <= window.innerHeight);
-    //     if (isVisible) {
-    //         bannerText.classList.remove('hidden');
-    //         bannerText.classList.add('visible');
-    //     } else {
-    //         bannerText.classList.remove('visible');
-    //         bannerText.classList.add('hidden');
-    //     }
-    // });
-
     const projects = document.querySelectorAll('.project');
     projects.forEach((project, index) => {
         const rect = project.getBoundingClientRect();
@@ -61,7 +48,7 @@ document.addEventListener('scroll', function() {
         if (isVisible) {
             setTimeout(() => {
                 project.classList.add('animate');
-            }, index * 300);
+            }, index * 100);
         } else {
             project.classList.remove('animate');
         }
