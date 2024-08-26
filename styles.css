@@ -17,7 +17,7 @@ html {
     --primary-color: hsla(177, 48%, 91%);
     --dark-color: hsla(200, 72%, 21%, 1);
 
-    --heading-font: 'Baskervville SC';
+    --heading-font: "Baskervville SC";
 }
 
 body {
@@ -57,7 +57,7 @@ a {
     font-size: 1rem;
     padding: 0 15px;
     transition: 0.5s;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .navbar-text {
@@ -89,7 +89,7 @@ a {
     transform: translateY(-100%);
 }
 
-@media (max-width: 1245px) {
+@media (max-width: 1279px) {
     .navbar-text {
         font-size: 1.5rem;
     }
