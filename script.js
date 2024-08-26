@@ -92,9 +92,12 @@ document.addEventListener('DOMContentLoaded', () => {
     function highlightNavLink() {
         let currentBanner = null;
 
-        banners.forEach(banner => {
+        banners.forEach((banner, index) => {
             const rect = banner.getBoundingClientRect();
-            const isVisible = (rect.top >= 0) && (rect.bottom <= window.innerHeight);
+            const nextBanner = banners[index + 1];
+            const nextRect = nextBanner ? nextBanner.getBoundingClientRect() : null;
+
+            const isVisible = (rect.top <= window.innerHeight / 2) && (!nextRect || nextRect.top > window.innerHeight / 2);
             if (isVisible) {
                 currentBanner = banner;
             }
@@ -110,16 +113,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (currentBanner) {
             const bannerId = currentBanner.getAttribute('id');
-            const activeLink = document.querySelector(`.navbar a[href="#${bannerId}"]`);
+            const activeLink = document.querySelector(`.anchor a[href="#${bannerId}"]`);
             if (activeLink) {
-                activeLink.style.color = "hsl(200, 72%, 21%)";
+                activeLink.style.color = "hsla(200, 72%, 21%, 1)";
+                activeLink.style.fontSize = "1.2rem";
+
             }
             const dropdownLink = document.querySelector(`.dropdown-content a[href="#${bannerId}"]`);
             if (dropdownLink) {
-                dropdownLink.style.color = "hsl(200, 72%, 21%)";
+                dropdownLink.style.color = "hsla(200, 72%, 21%, 1)";
+                dropdownLink.style.fontSize = "1.2rem";
             }
         }
     }
+
     window.addEventListener('scroll', highlightNavLink);
     highlightNavLink();
 });
@@ -157,6 +164,38 @@ document.querySelector('.navbar').addEventListener('click', function (event) {
     }
 });
 
+function createFavicon() {
+    const newColorScheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light";
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+        newColorScheme = event.matches ? "dark" : "light";
+    });
+    const canvas = document.createElement('canvas');
+    canvas.width = 32;
+    canvas.height = 32;
+    const context = canvas.getContext('2d');
 
+    context.fillStyle = 'transparent';
+    context.fillRect(0, 0, canvas.width, canvas.height);
 
+    context.font = '24px "Baskerville SC"';
+    if (newColorScheme === "dark") {
+        context.fillStyle = '#FFFFFF';
+    } else {
+        context.fillStyle = '#000000';
+    }
+    
+    // const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    // if (darkModeMediaQuery.matches) {
+    //     context.fillStyle = '#FFFFFF';
+    // } else {
+    //     context.fillStyle = '#000000';
+    // }  
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
+    context.fillText('AT', canvas.width / 2, canvas.height / 2);
 
+    const favicon = document.getElementById('favicon');
+    favicon.href = canvas.toDataURL('image/png');
+}
+
+window.onload = createFavicon;
