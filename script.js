@@ -7,9 +7,9 @@ function createFavicon() {
     context.fillStyle = 'transparent';
     context.fillRect(0, 0, canvas.width, canvas.height);
     context.fillStyle = '#d4af37';
-    context.font ='25px Baskerville SC';
+    context.font = '25px Baskerville SC';
 
-     
+
     context.textAlign = 'center';
     context.textBaseline = 'middle';
     context.fillText('AT', canvas.width / 2, canvas.height / 2);
@@ -24,6 +24,7 @@ let cross = 0;
 function toggleDropdown() {
     const dropdown = document.querySelector(".dropdown-content");
     dropdown.classList.toggle("show");
+    console.log(dropdown.innerHTML);
     if (cross == 0) {
         document.getElementById('startAnimation').beginElement();
         cross = 1;
@@ -39,7 +40,6 @@ function animateElements(selector) {
     elements.forEach((element, index) => {
         const rect = element.getBoundingClientRect();
         const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-
         if (isVisible) {
             setTimeout(() => {
                 element.classList.add('animate');
@@ -53,7 +53,6 @@ function animateElements(selector) {
 let lastScrollTop = 0;
 let viewedElements = new Set();
 document.addEventListener('scroll', () => {
-    console.log(cross)
     const navbar = document.querySelector('.navbar');
     const dropdown = document.querySelector('.dropdown-content');
     let currentScroll = window.scrollY;
@@ -153,7 +152,7 @@ document.addEventListener('scroll', () => {
 });
 
 document.querySelectorAll(".dropdown-content a").forEach(item => {
-    item.addEventListener("click", () => {       
+    item.addEventListener("click", () => {
         setTimeout(() => {
             const navbar = document.querySelector('.navbar');
             navbar.classList.add('hidden');
@@ -163,20 +162,10 @@ document.querySelectorAll(".dropdown-content a").forEach(item => {
 });
 
 document.querySelectorAll(".anchor a").forEach(item => {
-    item.addEventListener("click", () => {       
+    item.addEventListener("click", () => {
         setTimeout(() => {
             const navbar = document.querySelector('.navbar');
             navbar.classList.add('hidden');
         }, 1000);
     });
 });
-
-const debounce = (func, wait) => {
-    let timeout;
-    return function (...args) {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => func.apply(this, args), wait);
-    };
-};
-
-document.addEventListener('scroll', debounce(scrollHandler, 100));  
