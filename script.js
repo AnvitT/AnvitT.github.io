@@ -1,11 +1,16 @@
 let lastScrollTop = 0;
 let scrollHandler = function () {
     const navbar = document.querySelector('.navbar');
+    const dropdown = document.querySelector('.dropdown-content');
     let currentScroll = window.scrollY;
 
-    if (currentScroll > lastScrollTop && currentScroll > 30) {
+    if (currentScroll > lastScrollTop && currentScroll > 30) {   
+        if (dropdown.classList.contains('show')) {
+            const reverseAnimation = document.getElementById("reverse");
+            reverseAnimation.beginElement();
+        }
         document.querySelector(".dropdown-content").classList.remove("show");
-        navbar.classList.add('hidden');
+        navbar.classList.add('hidden');       
     } else if (currentScroll < lastScrollTop) {
         navbar.classList.remove('hidden');
     }
@@ -136,7 +141,9 @@ function toggleDropdown() {
 }
 
 document.querySelectorAll(".dropdown-content a").forEach(item => {
-    item.addEventListener("click", () => {
+    item.addEventListener("click", () => {       
+        const reverseAnimation = document.getElementById("reverse");
+        reverseAnimation.beginElement();
         document.querySelector(".dropdown-content").classList.remove("show");
     });
 });
@@ -144,7 +151,11 @@ document.querySelectorAll(".dropdown-content a").forEach(item => {
 document.addEventListener('click', (event) => {
     const dropdown = document.querySelector(".dropdown-content");
     const dropdownBtn = document.querySelector(".dropdown-btn");
-    if (!dropdown.contains(event.target) && !dropdownBtn.contains(event.target)) {
+    const navbar = document.querySelector(".navbar");
+    
+    if (!dropdown.contains(event.target) && 
+        !dropdownBtn.contains(event.target) && 
+        !navbar.contains(event.target)) {
         dropdown.classList.remove("show");
     }
 });
@@ -156,13 +167,19 @@ function disableScrollHandler() {
     }, 1000);
 }
 
-document.querySelector('.navbar').addEventListener('click', function (event) {
-    if (event.target.tagName === 'A') {
+document.querySelector('dropdown-btn').addEventListener('click', function () {
         disableScrollHandler();
         const navbar = document.querySelector('.navbar');
         navbar.classList.add('hidden');
-    }
 });
+
+// document.querySelector('.navbar').addEventListener('click', function (event) {
+//     if (event.target.tagName === 'A') {
+//         disableScrollHandler();
+//         const navbar = document.querySelector('.navbar');
+//         navbar.classList.add('hidden');
+//     }
+// });
 
 function createFavicon() {
     const newColorScheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light";
@@ -183,13 +200,7 @@ function createFavicon() {
     } else {
         context.fillStyle = '#000000';
     }
-    
-    // const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    // if (darkModeMediaQuery.matches) {
-    //     context.fillStyle = '#FFFFFF';
-    // } else {
-    //     context.fillStyle = '#000000';
-    // }  
+     
     context.textAlign = 'center';
     context.textBaseline = 'middle';
     context.fillText('AT', canvas.width / 2, canvas.height / 2);
@@ -199,3 +210,13 @@ function createFavicon() {
 }
 
 window.onload = createFavicon;
+
+const debounce = (func, wait) => {
+    let timeout;
+    return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+};
+
+document.addEventListener('scroll', debounce(scrollHandler, 100));
