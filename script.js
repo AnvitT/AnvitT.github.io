@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Go to top of page on refresh
+    window.scrollTo(0, 0);
+    
     const nameText = document.getElementById('nameText');
     const name = 'Anvit Tandon';
     
