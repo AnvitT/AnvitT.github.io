@@ -1,23 +1,391 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>
-            ...
-        </title>
-        <link  href="styles.css" rel="stylesheet">
-    </head>
-    <body>
-        <script src="script.js"></script>
-        <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
-        <div class="container">
-        <div class="box">
-            <div class="animation">
-            <div class="one spin-one"></div>
-            <div class="two spin-two"></div>
-            <div class="three spin-one"></div>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anvit Tandon</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libertinus+Mono&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo" id="navLogo">Anvit Tandon</div>
+            <div class="burger-menu" id="burgerMenu">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-        <h1>Under maintenance</h1>
-        <p>Author is in second year :P</p>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-social">
+                <a href="https://github.com/AnvitT" target="_blank" class="social-link" title="GitHub">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/anvit-tandon/" target="_blank" class="social-link" title="LinkedIn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19M18.5,18.5V13.2A3.26,3.26 0 0,0 15.24,9.94C14.39,9.94 13.4,10.46 12.92,11.24V10.13H10.13V18.5H12.92V13.57C12.92,12.8 13.54,12.17 14.31,12.17A1.4,1.4 0 0,1 15.71,13.57V18.5H18.5M6.88,8.56A1.68,1.68 0 0,0 8.56,6.88C8.56,5.95 7.81,5.19 6.88,5.19A1.69,1.69 0 0,0 5.19,6.88C5.19,7.81 5.95,8.56 6.88,8.56M8.27,18.5V10.13H5.5V18.5H8.27Z" />
+                    </svg>
+                </a>
+            </div>
         </div>
-    </body> 
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section home-section">
+        <div class="home-content">
+            <div class="name-container">
+                <div class="name-text" id="nameText"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="section-container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="about-intro">
+                        <p>I am a passionate and results-driven Computer Science undergraduate at the Indian Institute
+                            of Information Technology (IIIT) Bhopal, with a strong academic record (CGPA: 9.48/10) and a
+                            deep interest in full-stack development, AI integration, and algorithmic problem-solving.
+                        </p>
+                        <p>My experience spans impactful internships where I enhanced ERP systems, implemented real-time
+                            features, and published an IEEE paper on an innovative pathfinding algorithm. I enjoy
+                            building scalable solutions that merge functionality with a seamless user experience.</p>
+                    </div>
+
+                    <div class="skills-container">
+                        <div class="skills-section">
+                            <h3><span class="icon">💻</span>Languages</h3>
+                            <div class="skills-grid">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">C#</span>
+                                <span class="skill-tag">Kotlin</span>
+                                <span class="skill-tag">C</span>
+                                <span class="skill-tag">C++</span>
+                                <span class="skill-tag">SQL</span>
+                                <span class="skill-tag">HTML</span>
+                                <span class="skill-tag">CSS</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">TypeScript</span>
+                            </div>
+                        </div>
+
+                        <div class="skills-section">
+                            <h3><span class="icon">🛠️</span>Technologies & Tools</h3>
+                            <div class="skills-grid">
+                                <span class="skill-tag">React.js</span>
+                                <span class="skill-tag">Next.js</span>
+                                <span class="skill-tag">NextAuth.js</span>
+                                <span class="skill-tag">Flask</span>
+                                <span class="skill-tag">.NET Core</span>
+                                <span class="skill-tag">MongoDB</span>
+                                <span class="skill-tag">SQL Server</span>
+                                <span class="skill-tag">Tailwind CSS</span>
+                                <span class="skill-tag">Google Generative AI</span>
+                                <span class="skill-tag">Selenium</span>
+                                <span class="skill-tag">Postman</span>
+                                <span class="skill-tag">VS Code</span>
+                                <span class="skill-tag">Visual Studio</span>
+                                <span class="skill-tag">Git</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="section-container">
+            <h2>Experience</h2>
+            <div class="experience-timeline">
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="experience-title">
+                            <h3>Software Engineer Intern</h3>
+                            <h4>Dream Cloudtech</h4>
+                        </div>
+                        <div class="experience-date">March 2025 - May 2025</div>
+                    </div>
+                    <div class="experience-description">
+                        <ul>
+                            <li>Enhanced UI/UX of the school ERP product website (Vite + React.js) developed by Dream
+                                Cloudtech, improving user experience and navigation.</li>
+                            <li>Implemented PDF to Excel conversion, structuring data into a specific format compatible
+                                with the ERP system for seamless API-based uploads.</li>
+                            <li>Optimized frontend performance, reducing load times and improving responsiveness through
+                                efficient React.js components and best practices.</li>
+                        </ul>
+                    </div>
+                    <div class="project-tags">
+                        <span>React.js</span>
+                        <span>Vite</span>
+                        <span>API Integration</span>
+                        <span>UI/UX</span>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="experience-title">
+                            <h3>Teaching Assistant</h3>
+                            <h4>Indian Institute of Information Technology (IIIT) Bhopal</h4>
+                        </div>
+                        <div class="experience-date">Jan 2025 - May 2025</div>
+                    </div>
+                    <div class="experience-description">
+                        <ul>
+                            <li>Appointed as a Teaching Assistant for "Discrete Structures (CSE-2002)" under the
+                                guidance of <strong>Dr. Gaurav Khanna</strong> and <strong>Dr. Habibul Islam</strong>.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="project-tags">
+                        <span>Discrete Structures</span>
+                        <span>Teaching</span>
+                        <span>Academic Support</span>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="experience-title">
+                            <h3>Software Engineer Intern</h3>
+                            <h4>Garuda Travels - Bhopal, MP</h4>
+                        </div>
+                        <div class="experience-date">June 2024 - August 2024</div>
+                    </div>
+                    <div class="experience-description">
+                        <ul>
+                            <li>Developed web scraping tools using Selenium and Python to gather and analyze relevant
+                                data, aiding business insights and decision-making.</li>
+                            <li>Ensured seamless integration of the scraped data into business operations for improved
+                                decision processes.</li>
+                        </ul>
+                    </div>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>Selenium</span>
+                        <span>Web Scraping</span>
+                        <span>Data Analysis</span>
+                        <span>MS Excel</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section section-dark">
+        <div class="section-container">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>WhisperNet</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/AnvitT/whisper_net" target="_blank"
+                                class="project-link github-link" title="View Source Code">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
+                            </a>
+                            <a href="https://whisper-net-peach.vercel.app/" target="_blank"
+                                class="project-link demo-link" title="Live Demo">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <p>Developed a web app for anonymous messaging with AI-generated suggestions using Google Generative
+                        AI. Integrated secure authentication via NextAuth.js and real-time notifications.</p>
+                    <div class="project-tags">
+                        <span>Next.js</span>
+                        <span>React.js</span>
+                        <span>MongoDB</span>
+                        <span>Tailwind CSS</span>
+                        <span>Google Gen AI</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Personal Finance Visualizer</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/AnvitT/finance-visualizer" target="_blank"
+                                class="project-link github-link" title="View Source Code">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
+                            </a>
+                            <a href="https://finance-visualizer-eight.vercel.app/" target="_blank"
+                                class="project-link demo-link" title="Live Demo">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <p>Built a comprehensive finance tracking application with transaction management, category-wise
+                        spending analysis, and budget planning features. Includes interactive charts and dashboard
+                        insights.</p>
+                    <div class="project-tags">
+                        <span>Next.js</span>
+                        <span>React.js</span>
+                        <span>MongoDB</span>
+                        <span>shadcn/ui</span>
+                        <span>Recharts</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>ScheduleIt</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/AnvitT/ScheduleIt" target="_blank"
+                                class="project-link github-link" title="View Source Code">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
+                            </a>
+                            <a href="https://schedule-it-lac.vercel.app/" target="_blank" class="project-link demo-link"
+                                title="Live Demo">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <p>Designed and developed a responsive event scheduling app with drag-and-drop rescheduling,
+                        color-coded events, and local storage support for persistence.</p>
+                    <div class="project-tags">
+                        <span>React.js</span>
+                        <span>JavaScript</span>
+                        <span>Vercel</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Pathfinding Algorithm</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/AnvitT/SonicRover" target="_blank"
+                                class="project-link github-link" title="View Source Code">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
+                            </a>
+                            <a href="https://ieeexplore.ieee.org/document/10482083" target="_blank"
+                                class="project-link paper-link" title="IEEE Paper">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <p>Led and published an IEEE paper on a novel pathfinding algorithm for an RC car using a single
+                        ultrasonic sensor and a two-phase obstacle detection system.</p>
+                    <div class="project-tags">
+                        <span>C++</span>
+                        <span>Arduino</span>
+                        <span>Hardware Prototyping</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="section-container">
+            <h2>Get In Touch</h2>
+            <p>I'm always open to discussing new opportunities, innovative projects, or collaborating on exciting ideas.
+                Let's connect and build something amazing together!</p>
+
+            <div class="contact-options">
+                <a href="mailto:anvittandon0808@gmail.com" class="contact-btn email-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.11,4 20,4Z" />
+                    </svg>
+                    Send Email
+                </a>
+
+                <a href="tel:+917489283615" class="contact-btn phone-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z" />
+                    </svg>
+                    Call Me
+                </a>
+
+                <a href="https://www.linkedin.com/in/anvit-tandon/" target="_blank" class="contact-btn linkedin-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19M18.5,18.5V13.2A3.26,3.26 0 0,0 15.24,9.94C14.39,9.94 13.4,10.46 12.92,11.24V10.13H10.13V18.5H12.92V13.57C12.92,12.8 13.54,12.17 14.31,12.17A1.4,1.4 0 0,1 15.71,13.57V18.5H18.5M6.88,8.56A1.68,1.68 0 0,0 8.56,6.88C8.56,5.95 7.81,5.19 6.88,5.19A1.69,1.69 0 0,0 5.19,6.88C5.19,7.81 5.95,8.56 6.88,8.56M8.27,18.5V10.13H5.5V18.5H8.27Z" />
+                    </svg>
+                    LinkedIn
+                </a>
+
+                <a href="./Anvit Tandon Resume.pdf" download="Anvit_Tandon_Resume.pdf" class="contact-btn resume-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
+                    </svg>
+                    Resume
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Thanks for visiting! - Anvit Tandon</p>
+            <p>3rd year CSE student @ IIIT Bhopal</p>
+            <div class="footer-social">
+                <a href="https://github.com/AnvitT" target="_blank" class="footer-social-link" title="GitHub">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/anvit-tandon/" target="_blank" class="footer-social-link" title="LinkedIn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19M18.5,18.5V13.2A3.26,3.26 0 0,0 15.24,9.94C14.39,9.94 13.4,10.46 12.92,11.24V10.13H10.13V18.5H12.92V13.57C12.92,12.8 13.54,12.17 14.31,12.17A1.4,1.4 0 0,1 15.71,13.57V18.5H18.5M6.88,8.56A1.68,1.68 0 0,0 8.56,6.88C8.56,5.95 7.81,5.19 6.88,5.19A1.69,1.69 0 0,0 5.19,6.88C5.19,7.81 5.95,8.56 6.88,8.56M8.27,18.5V10.13H5.5V18.5H8.27Z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
 </html>
